@@ -17,7 +17,7 @@ USER hduser
 
 
 RUN wget -q https://downloads.apache.org/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz && tar zxvf hadoop-3.3.0.tar.gz && rm hadoop-3.3.0.tar.gz
-RUN sudo service ssh start
+
 
 RUN mv hadoop-3.3.0 hadoop
 
@@ -55,10 +55,10 @@ COPY mapred-site.xml $HADOOP_HOME/etc/hadoop/
 EXPOSE 50070 50075 50010 50020 50090 8020 9000 9864 9870 10020 19888 8088 8030 8031 8032 8033 8040 8042 22
 
 # format the HDFS system
-RUN hdfs namenode -format
+#RUN hdfs namenode -format
 
 # start hadoop 's services 
 
-RUN start-dfs.sh
-RUN start-yarn.sh
+#RUN start-dfs.sh
+#RUN start-yarn.sh
  
